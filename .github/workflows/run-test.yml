@@ -6,7 +6,8 @@ jobs:
     steps:
       - name: Check out repository code
         uses: actions/checkout@v2
-      - run: echo "🔎 The path is" | ls
+      - run: echo "🔎 The path is" | pwd
       - run: cd ./src
+      - run: echo "🔎 The path is" | pwd
       - run: npm install
       - run: npm test
