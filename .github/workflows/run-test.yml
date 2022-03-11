@@ -6,8 +6,9 @@ jobs:
     steps:
       - name: Check out repository code
         uses: actions/checkout@v2
-      - run: echo "🔎 The path is" | pwd
-      - run: cd ./src
-      - run: echo "🔎 The path is" | pwd
-      - run: npm install
-      - run: npm test
+      - name: Installing dependencies
+        working-directory: ./src
+        run: npm install --production=false
+      - name: Running tests
+        working-directory: ./src
+        run: npm test
